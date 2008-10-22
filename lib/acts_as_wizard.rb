@@ -144,8 +144,10 @@ module AmosKing #:nodoc:
 			  end
 			  
 			  # Creates a check box for the current_wizard_page
+        # Now auto selected works with boolean attribute
 			  def wizard_page_check_box(field, opts = {}, checked_value = "1", unchecked_value = "0")
-			    opts[:checked] = checked_value == @page.send(field.to_s)
+          opts[:checked] = @page.send(field.to_s)
+			    #opts[:checked] = checked_value == @page.send(field.to_s)
 			    check_box(page_object_name, method, opts, checked_value, unchecked_value)
 		    end
 		    
